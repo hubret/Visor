@@ -11,7 +11,7 @@ var presentation = [];
 var notesVisible = false;
 
 //sidebar visibility
-var sideVisible = false;
+var sideVisible = true;
 grid.style.width = "calc(100% + 250px)";
 grid.style.marginLeft = "-250px";
 

@@ -11,55 +11,157 @@ hi3: #aaa
 //img: #111
 //col: #aaa
 
-=my first slide (any text after an '=' isn't parsed)
+=0. Title
 
 img: #111
-col: #aaa
+col: #fff
 
-sec: First Section
-til: First Slide
-
-not:
-Just a few notes.
-+
-+
-Nothing special.
-
-=second slide
-
-til: Second Slide
-
-con:
-Here's some _[italic] and *[bold] content.
-+
-+
--List
--Of
--Points
-+
-And some more text.
+sec: Introduction Section
+til: Visor
 
 not:
-And some notes, along with a #[link>https://github.com/v-exec/Visor].
+hubret was here.
 
-=============3
+=1. About
 
-img: #fff
-col: #000
+img: #111
+col: #fff
 
-sec: New Section
-til: Third Slide
+til: About
 
 con:
-Longer piece of text.
-+
-+
-With some spaces.
-+
-+
-Here.
+_[Visor] is a minimalistic presentation tool.
+++
+Visor runs locally, and will load a *[.txt] visor presentation file.
+++
+The file must contain *[attributes] (information that defines the content), which can be formatted according to *[rules].
 
-=============4
+not:
 
-img: example image bright.jpg
-til: Final Slide
+=2. Usage
+
+img: #111
+col: #fff
+
+sec: Usage
+til: How to use Visor
+
+con:
+-To load a presentation, simply drag and drop a .txt file into the dropzone.
+
+-Navigate through the slides by choosing a slide with the sidebar, or flip through with the *[,] and *[.] keys.
+
+-Press *[s] to show and hide the sidebar.
+
+-Press *[n] to show and hide the slide notes.
+
+not:
+This is a slide note!
+
+=3. Attributes (1/3)
+
+img: #111
+col: #fff
+
+sec: Attributes
+til: Attributes (1/3)
+
+con:
+-*[img: image.png] determines image for slide
+-*[img: #000] will instead use a solid color for the background of a slide
+-*[til: title] determines title of slide
+-*[sec: section] determines presentation section
+
+not:
+
+=4. Attributes (2/3)
+
+img: #111
+col: #fff
+
+til: Attributes (2/3)
+
+con:
+
+-*[col: #000] determines text color in content
+-*[sho: false] determines the visibility of the title
+-*[con: content] determines content of the slide
+-*[not: notes] determines notes of the slide
+
+not:
+
+=5. Attributes (3/3)
+
+img: #111
+col: #fff
+
+til: Attributes (3/3)
+
+con:
+
+-*[-] starting a line with - in content will make it part of an indented list
+-*[=] an empty line starting with = determines the beginning
+-*[//comment] determines a comment and will be ignored by the parser
+-*[+] determines a line break
+
+not:
+
+=6. Formatting Rules
+
+img: #111
+col: #fff
+
+sec: Formatting Rules
+til: Formatting Rules
+
+
+//need escapes!
+con:
+
+-'#[text>link]' creates link
+
+-'_[text]' makes text italic
+
+-'*[text]' makes text bold
+
+-Content and notes are the only attributes that can be formatted with rules.
+
+-rules can be nested.
+
+not:
+
+=7. Parser Behaviours (1/2)
+
+img: #111
+col: #fff
+
+sec: Parser Behaviours
+til: Parser Behaviours (1/2)
+
+con:
+
+-Visor's parser is not whitespace-based, meaning line breaks need to be declared manually by writing + at the start of a line.
+
+-When a slide doesn't have a con attribute, it will automatically make the title large and centered. Otherwise, it'll create a typical
+
+-If any theming attributes are left empty, the default theme will be used.
+
+not:
+
+=8. Parser Behaviours (2/2)
+
+img: #111
+col: #fff
+
+til: Parser Behaviours (2/2)
+
+con:
+
+-If attributes like img, sec, or col are left empty after they've been previously declared, future slides will retain the same img, sec, and col, meaning that there's no need to redundantly redescribe each slide.
+
+-The img attribute automatically searches in root folder called images.
+
+-All attributes are optional, not including one (or many) in a slide definition is completely fine.
+
+not:
+
